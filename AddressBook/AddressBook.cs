@@ -36,5 +36,26 @@ namespace AddressBook
                 }
             }
         }
+        public void DeleteContct()
+        {
+            Console.WriteLine("Enter UserName to delete appropriate contact:");
+            string UserEnteredName=Console.ReadLine();
+            if (Contacts.Count <= 0)
+            {
+                Console.WriteLine("No contacts available");
+            }
+            else
+            {
+                Contact contact = null;
+                foreach(var item in Contacts)
+                {
+                    if(item.Name == UserEnteredName)
+                    {
+                        contact = item;
+                    }
+                }
+                Contacts.Remove(contact);
+            }
+        }
     }
 }
